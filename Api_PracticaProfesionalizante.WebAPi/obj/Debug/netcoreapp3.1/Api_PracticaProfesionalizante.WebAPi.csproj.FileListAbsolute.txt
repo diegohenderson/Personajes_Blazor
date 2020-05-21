@@ -45,3 +45,14 @@ C:\repos\Api_PracticaProfesionalizante\Api_PracticaProfesionalizante.WebAPi\bin\
 C:\repos\Api_PracticaProfesionalizante\Api_PracticaProfesionalizante.WebAPi\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\repos\Api_PracticaProfesionalizante\Api_PracticaProfesionalizante.WebAPi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\repos\Api_PracticaProfesionalizante\Api_PracticaProfesionalizante.WebAPi\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
+C:\repos\Api_PracticaProfesionalizante\Api_PracticaProfesionalizante.WebAPi\bin\Debug\netcoreapp3.1\Api_PracticaProfesionalizante.WebAPi.deps.json
+C:\repos\Api_PracticaProfesionalizante\Api_PracticaProfesionalizante.WebAPi\bin\Debug\netcoreapp3.1\Api_PracticaProfesionalizante.WebAPi.runtimeconfig.json
+C:\repos\Api_PracticaProfesionalizante\Api_PracticaProfesionalizante.WebAPi\bin\Debug\netcoreapp3.1\Api_PracticaProfesionalizante.WebAPi.runtimeconfig.dev.json
+C:\repos\Api_PracticaProfesionalizante\Api_PracticaProfesionalizante.WebAPi\bin\Debug\netcoreapp3.1\Api_PracticaProfesionalizante.WebAPi.dll
+C:\repos\Api_PracticaProfesionalizante\Api_PracticaProfesionalizante.WebAPi\bin\Debug\netcoreapp3.1\Api_PracticaProfesionalizante.WebAPi.pdb
+C:\repos\Api_PracticaProfesionalizante\Api_PracticaProfesionalizante.WebAPi\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\repos\Api_PracticaProfesionalizante\Api_PracticaProfesionalizante.WebAPi\obj\Debug\netcoreapp3.1\Api_PracticaProfesionalizante.WebAPi.csproj.CoreCompileInputs.cache
+C:\repos\Api_PracticaProfesionalizante\Api_PracticaProfesionalizante.WebAPi\obj\Debug\netcoreapp3.1\Api_PracticaProfesionalizante.WebAPi.MvcApplicationPartsAssemblyInfo.cache
+C:\repos\Api_PracticaProfesionalizante\Api_PracticaProfesionalizante.WebAPi\obj\Debug\netcoreapp3.1\Api_PracticaProfesionalizante.WebAPi.dll
+C:\repos\Api_PracticaProfesionalizante\Api_PracticaProfesionalizante.WebAPi\obj\Debug\netcoreapp3.1\Api_PracticaProfesionalizante.WebAPi.pdb
+C:\repos\Api_PracticaProfesionalizante\Api_PracticaProfesionalizante.WebAPi\obj\Debug\netcoreapp3.1\Api_PracticaProfesionalizante.WebAPi.genruntimeconfig.cache

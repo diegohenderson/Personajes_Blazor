@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Api_PracticaProfesionalizante.WebAPi.Data;
 using Api_PracticaProfesionalizante.WebAPi.Data.Entities;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Api_PracticaProfesionalizante.WebAPi.Controllers
 {
@@ -19,6 +20,7 @@ namespace Api_PracticaProfesionalizante.WebAPi.Controllers
             this.context = context;
         }
         #region Get
+        
         //Get de La lista Entera.
         [HttpGet]
         public ActionResult<IEnumerable<Personaje>>Get()
@@ -38,20 +40,57 @@ namespace Api_PracticaProfesionalizante.WebAPi.Controllers
             }
             return personaje;
         }
-
         #endregion
+
         #region Post
+        /*[HttpPost]
+        public ActionResult<Personaje> Post([FromBody]Personaje personaje)
+        {
+            context.Personajes.Add(personaje);
+            context.SaveChanges();
+            return personaje;
+        }*/
 
         [HttpPost]     
         public async Task<ActionResult<Personaje>> Post([FromBody] Personaje personaje)
         {
             
-            await context.Personajes.AddAsync(pais);
+            await context.Personajes.AddAsync(personaje);
             
             await context.SaveChangesAsync();
             return new CreatedAtRouteResult("obtenerPersonajePorId", new { id = personaje.Id }, personaje);
             
 
+        }
+
+        #endregion
+        #region Put
+        [HttpPut("{id}")]
+        public ActionResult<Personaje> Put(int id, [FromBody] Personaje personaje)
+        {
+            if (id != personaje.Id)
+            {
+                return BadRequest();
+            }
+            context.Entry(personaje).State = EntityState.Modified;
+            context.SaveChanges();
+            return Ok();
+
+        }
+        #endregion
+        #region Delete
+
+        [HttpDelete("{id}")]
+        public ActionResult<Personaje> Delete(int id)
+        {
+            var personaje = context.Personajes.FirstOrDefault(p => p.Id == id);
+            if (personaje == null)
+            {
+                return NotFound();
+            }
+            context.Personajes.Remove(personaje);
+            context.SaveChanges();
+            return Ok();
         }
         #endregion
 

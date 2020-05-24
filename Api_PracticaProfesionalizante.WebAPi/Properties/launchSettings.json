@@ -12,7 +12,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
-      "launchUrl": "Personajes",
+      "launchUrl": "api/personajes",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

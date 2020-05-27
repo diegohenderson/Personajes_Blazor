@@ -1,0 +1,63 @@
+﻿@page "/fetchdata"
+
+@using Api.Blazor.Data
+
+@inject PersonajeServices personajeservice
+
+
+
+<h1>lo mas importante es el front end</h1>
+
+<p>This component demonstrates fetching data from a service.</p>
+
+@if (personaje == null)
+{
+    <p><em>si...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Localizacion</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@personaje.Nombre</td>
+                <td>@personaje.Apellido</td>
+                <td>@personaje.Localizacion</td>
+
+            </tr>
+            @*@foreach (var forecast in forecasts)
+                {
+                    <tr>
+                        <td>@forecast.Date.ToShortDateString()</td>
+                        <td>@forecast.TemperatureC</td>
+                        <td>@forecast.TemperatureF</td>
+                        <td>@forecast.Summary</td>
+                    </tr>
+                }*@
+        </tbody>
+    </table>
+}
+
+
+@code {
+    private Api.Blazor.Modelos.Personaje personaje;
+
+    protected override async Task OnInitializedAsync()
+    {
+        //int Id = 3;
+        //string url = "https://localhost:44383/api/personajes/";
+
+        personaje = await personajeservice.GetTaskByIdAsync();
+        //personaje = await GenericServices<ConsumirApiBlazor.Modelos.Personaje>.GetTaskByIdAsync(Id, url);
+
+    }
+
+
+}

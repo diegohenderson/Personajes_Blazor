@@ -23,7 +23,7 @@ namespace Api_PracticaProfesionalizante.WebAPi.Controllers
         
         //Get de La lista Entera.
         [HttpGet]
-        public ActionResult<IEnumerable<Personaje>>Get()
+        public ActionResult<List<Personaje>>Get()
         {
             return context.Personajes.ToList();
         }

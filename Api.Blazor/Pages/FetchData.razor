@@ -10,9 +10,9 @@
 
 <p>This component demonstrates fetching data from a service.</p>
 
-@if (personaje == null)
+@if (Listapersonajes == null)
 {
-    <p><em>si...</em></p>
+    <p><em>Corregi</em></p>
 }
 else
 {
@@ -22,25 +22,26 @@ else
                 <th>Nombre</th>
                 <th>Apellido</th>
                 <th>Localizacion</th>
+                <button class="btn btn-primary" @onclick="MostrarIdasync">Mostrar</button>
+                <button class="btn btn-warning" @onclick="GuardarAsync">Guardar</button>
 
+                <InputText id="Nombre" @bind-Value="personaje.Nombre" />
+                <InputText id="Apellido" @bind-Value="personaje.Apellido" />
+                <InputText id="Localizacion" @bind-Value="personaje.Localizacion" />
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>@personaje.Nombre</td>
-                <td>@personaje.Apellido</td>
-                <td>@personaje.Localizacion</td>
 
-            </tr>
-            @*@foreach (var forecast in forecasts)
-                {
-                    <tr>
-                        <td>@forecast.Date.ToShortDateString()</td>
-                        <td>@forecast.TemperatureC</td>
-                        <td>@forecast.TemperatureF</td>
-                        <td>@forecast.Summary</td>
-                    </tr>
-                }*@
+
+            @foreach (var personaje in Listapersonajes)
+            {
+                <tr>
+                    <td>@personaje.Nombre</td>
+                    <td>@personaje.Apellido</td>
+                    <td>@personaje.Localizacion</td>
+
+                </tr>
+            }
         </tbody>
     </table>
 }
@@ -48,14 +49,38 @@ else
 
 @code {
     private Api.Blazor.Modelos.Personaje personaje;
+    string urlPersonaje = "https://localhost:44383/api/personajes/";
+    List<Api.Blazor.Modelos.Personaje> Listapersonajes = new List<Api.Blazor.Modelos.Personaje>();
+    public async Task GuardarAsync()
+    {
+
+        /*
+        personaje.Nombre = 
+        personaje.Apellido = "Flanders";
+        personaje.Localizacion = "Sringfield";*/
+        await GenericServices<Api.Blazor.Modelos.Personaje>.PostAsync("https://localhost:44383/api/personajes/", personaje);
+
+
+    }
+    public async Task<Api.Blazor.Modelos.Personaje>MostrarIdasync()
+    {
+        int Id = 3;
+        string url = "https://localhost:44383/api/personajes/";
+        //personaje = await personajeservice.GetTaskByIdAsync();
+        personaje = await GenericServices<Api.Blazor.Modelos.Personaje>.GetTaskByIdAsync(Id, url);
+        return personaje;
+
+    }
 
     protected override async Task OnInitializedAsync()
     {
-        //int Id = 3;
-        //string url = "https://localhost:44383/api/personajes/";
 
-        personaje = await personajeservice.GetTaskByIdAsync();
-        //personaje = await GenericServices<ConsumirApiBlazor.Modelos.Personaje>.GetTaskByIdAsync(Id, url);
+
+
+        Listapersonajes = await GenericServices<Api.Blazor.Modelos.Personaje>.GetAllAsync(urlPersonaje);
+
+
+
 
     }
 

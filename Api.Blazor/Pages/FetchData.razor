@@ -2,7 +2,7 @@
 
 @using Api.Blazor.Data
 
-@inject PersonajeServices personajeservice
+@inject GenericServices<Api.Blazor.Modelos.Personaje> personajeservice
 
 
 
@@ -51,6 +51,7 @@ else
     private Api.Blazor.Modelos.Personaje personaje;
     string urlPersonaje = "https://localhost:44383/api/personajes/";
     List<Api.Blazor.Modelos.Personaje> Listapersonajes = new List<Api.Blazor.Modelos.Personaje>();
+    
     public async Task GuardarAsync()
     {
 

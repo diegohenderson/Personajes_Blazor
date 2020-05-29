@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "hndan7drnPphtdgmb2ZJoSweLu9Z3noVv3GD5e0IkvywHdQ9cNOi4bo8dsmybTZV3oGph1Mi6qat+o63TMXgxA==",
+  "dgSpecHash": "QehEWjn6cFU1OUs4lxl1oNorDGgEKnpKM0oNGszYo7POC63uk+A9av6KyD55CR5TMY0gcpBZaoq7erhBN/2VXg==",
   "success": true,
-  "projectFilePath": "C:\\repos\\Api_PracticaProfesionalizante\\Api_PracticaProfesionalizante.WebAPi\\Api_PracticaProfesionalizante.WebAPi.csproj",
+  "projectFilePath": "C:\\repos\\Api_PracticaProfesionalizante\\Api_PracticaProfesionalizante.WebAPi\\Api_Personaje.WebAPi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\diego\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\diego\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\3.1.4\\microsoft.aspnetcore.jsonpatch.3.1.4.nupkg.sha512",

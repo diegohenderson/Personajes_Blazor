@@ -1,4 +1,4 @@
-﻿@page "/fetchdata"
+﻿@page "/personajes"
 
 @using Api.Blazor.Data
 
@@ -9,61 +9,55 @@
 <h1>lo mas importante es el front end</h1>
 
 <p>This component demonstrates fetching data from a service.</p>
-
 @if (Listapersonajes == null)
 {
-    <p><em>Corregi</em></p>
-}
+    <p><em>Corregi</em></p> }
 else
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Apellido</th>
-                <th>Localizacion</th>
-                <button class="btn btn-primary" @onclick="MostrarIdasync">Mostrar</button>
-                <button class="btn btn-warning" @onclick="GuardarAsync">Guardar</button>
+    <div class="row">
 
-                @*<InputText id="Nombre" @bind-Value="personaje.Nombre" />
-                <InputText id="Apellido" @bind-Value="personaje.Apellido" />
-                <InputText id="Localizacion" @bind-Value="personaje.Localizacion" />*@
-            </tr>
-        </thead>
-        <tbody>
+        @foreach (var personaje in Listapersonajes)
+        {
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>@personaje.Nombre @personaje.Apellido</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>Primera aparicion: @personaje.PrimeraAparicion</p>
+                        <img src="@personaje.UrlImagen" />
+                        <p>Ubicacion: @personaje.Localizacion</p>
+                        <p>
+                            @if (personaje.IsAlive)
+                            {
+                                <h3>Está Vivo!</h3> }
+                            else
+                            {
+                                <h5>Ya no está entre nosotros :(</h5>}
+                        </p>
+                    </div>
 
+                </div>
+            </div>}
+    </div>}
 
-            @foreach (var personaje in Listapersonajes)
-            {
-                <tr>
-                    <td>@personaje.Nombre</td>
-                    <td>@personaje.Apellido</td>
-                    <td>@personaje.Localizacion</td>
-
-                </tr>
-            }
-        </tbody>
-    </table>
-}
-
-
-@code {
+@code 
+{ 
     private Api.Blazor.Modelos.Personaje personaje;
     string urlPersonaje = "https://localhost:44383/api/personajes/";
     List<Api.Blazor.Modelos.Personaje> Listapersonajes = new List<Api.Blazor.Modelos.Personaje>();
-    
     public async Task GuardarAsync()
     {
 
         /*
-        personaje.Nombre = 
+        personaje.Nombre =
         personaje.Apellido = "Flanders";
         personaje.Localizacion = "Sringfield";*/
         await GenericServices<Api.Blazor.Modelos.Personaje>.PostAsync("https://localhost:44383/api/personajes/", personaje);
 
 
     }
-    public async Task<Api.Blazor.Modelos.Personaje>MostrarIdasync()
+    public async Task<Api.Blazor.Modelos.Personaje> MostrarIdasync()
     {
         int Id = 3;
         string url = "https://localhost:44383/api/personajes/";
@@ -76,14 +70,9 @@ else
     protected override async Task OnInitializedAsync()
     {
 
-
-
         Listapersonajes = await GenericServices<Api.Blazor.Modelos.Personaje>.GetAllAsync(urlPersonaje);
 
 
 
-
-    }
-
-
+    } 
 }

@@ -8266,9 +8266,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\repos\\Api_PracticaProfesionalizante\\Api_PracticaProfesionalizante.WebAPi\\Api_PracticaProfesionalizante.WebAPi.csproj",
+      "projectUniqueName": "C:\\repos\\Api_PracticaProfesionalizante\\Api_PracticaProfesionalizante.WebAPi\\Api_Personaje.WebAPi.csproj",
       "projectName": "Api_PracticaProfesionalizante.WebAPi",
-      "projectPath": "C:\\repos\\Api_PracticaProfesionalizante\\Api_PracticaProfesionalizante.WebAPi\\Api_PracticaProfesionalizante.WebAPi.csproj",
+      "projectPath": "C:\\repos\\Api_PracticaProfesionalizante\\Api_PracticaProfesionalizante.WebAPi\\Api_Personaje.WebAPi.csproj",
       "packagesPath": "C:\\Users\\diego\\.nuget\\packages\\",
       "outputPath": "C:\\repos\\Api_PracticaProfesionalizante\\Api_PracticaProfesionalizante.WebAPi\\obj\\",
       "projectStyle": "PackageReference",

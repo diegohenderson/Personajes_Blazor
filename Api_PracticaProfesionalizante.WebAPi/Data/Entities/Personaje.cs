@@ -8,15 +8,19 @@ namespace Api_PracticaProfesionalizante.WebAPi.Data.Entities
 {
     public class Personaje
     {
-        //El campo id por default, lleva la etiqueta de primary key.
         public int Id { get; set; }
-        [Required]
-        public string Nombre { get; set; }
-        [Required]
-        public string Apellido { get; set; }
-        [Required]
-        public string Localizacion { get; set; }
 
+        public string Nombre { get; set; }
+
+        public string Apellido { get; set; }
+
+        public string Localizacion { get; set; }
+        public DateTime PrimeraAparicion { get; set; }
+        public string UrlImagen { get; set; }
+        public bool IsAlive { get; set; }
+
+        //todo agregar un array para amigos, en los 2 modelos
+        //
 
     }
 }
